@@ -192,5 +192,3 @@ systemctl start agl-app-flutter@agl_flutter_app.service
 - [The Linux Foundation](https://www.linuxfoundation.org/)
 - [Google Summer of Code 2026](https://summerofcode.withgoogle.com/)
 - [meta-flutter](https://github.com/meta-flutter/meta-flutter) — Flutter Yocto layer
-
--
