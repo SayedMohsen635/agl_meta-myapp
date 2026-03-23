@@ -11,8 +11,14 @@ S = "${WORKDIR}/git"
 
 inherit agl-app flutter-app
 
+# This ensures Yocto finds GStreamer headers during do_compile
+DEPENDS += "gstreamer1.0 gstreamer1.0-plugins-base"
+
+# This ensures the runtime image has the necessary libraries to play audio
+RDEPENDS:${PN} += "gstreamer1.0-plugins-base-playback gstreamer1.0-plugins-good-autodetect"
+
 PUBSPEC_APPNAME = "agl_flutter_app"
-FLUTTER_APPLICATION_INSTALL_PREFIX = "/flutter"
+FLUTTER_APPLICATION_INSTALL_PREFIX = "/usr/share/flutter"
 FLUTTER_BUILD_ARGS = "bundle -v"
 
 AGL_APP_TEMPLATE = "agl-app-flutter"
